@@ -200,6 +200,14 @@
     <Compile Include="Migrations\201911131318459_ChangeInMembershipType.designer.cs">
       <DependentUpon>201911131318459_ChangeInMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911131423292_AddCustomerBirthDate.cs" />
+    <Compile Include="Migrations\201911131423292_AddCustomerBirthDate.designer.cs">
+      <DependentUpon>201911131423292_AddCustomerBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911131430484_AddCustomerBirthDate1.cs" />
+    <Compile Include="Migrations\201911131430484_AddCustomerBirthDate1.designer.cs">
+      <DependentUpon>201911131430484_AddCustomerBirthDate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -270,6 +278,7 @@
     <Content Include="Views\Movie\Random.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911131318459_ChangeInMembershipType.resx">
       <DependentUpon>201911131318459_ChangeInMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911131423292_AddCustomerBirthDate.resx">
+      <DependentUpon>201911131423292_AddCustomerBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911131430484_AddCustomerBirthDate1.resx">
+      <DependentUpon>201911131430484_AddCustomerBirthDate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
