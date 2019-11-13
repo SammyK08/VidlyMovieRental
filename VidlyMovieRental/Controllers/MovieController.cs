@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,9 +23,19 @@ namespace VidlyMovieRental.Controllers
         {
 
 
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.
+                            Include(g=>g.Genre).
+                            ToList();
             
             return View(movies);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.
+                            Include(g=>g.Genre).
+                           SingleOrDefault(m => m.Id == id);
+            return View(movie);
         }
     }
 }
