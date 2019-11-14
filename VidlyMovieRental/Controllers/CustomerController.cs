@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VidlyMovieRental.Models;
+using VidlyMovieRental.ViewModel;
 
 namespace VidlyMovieRental.Controllers
 {
@@ -22,6 +23,18 @@ namespace VidlyMovieRental.Controllers
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
+        }
+
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+
+            };
+
+            return View(viewModel);
         }
 
         // GET: Customer
