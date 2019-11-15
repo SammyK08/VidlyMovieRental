@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201911131534389_PopulateGenreTable.designer.cs">
       <DependentUpon>201911131534389_PopulateGenreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911150928353_AddedValidationToMovieClass.cs" />
+    <Compile Include="Migrations\201911150928353_AddedValidationToMovieClass.designer.cs">
+      <DependentUpon>201911150928353_AddedValidationToMovieClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -231,6 +235,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModel\MovieFormViewModel.cs" />
     <Compile Include="ViewModel\RandomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +300,7 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movie\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911131534389_PopulateGenreTable.resx">
       <DependentUpon>201911131534389_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911150928353_AddedValidationToMovieClass.resx">
+      <DependentUpon>201911150928353_AddedValidationToMovieClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
