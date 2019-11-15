@@ -37,6 +37,14 @@ namespace VidlyMovieRental.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Create(NewCustomerViewModel viewModel)
+        {
+
+
+            return View();
+        }
+
         // GET: Customer
         public ActionResult Index()
         {
