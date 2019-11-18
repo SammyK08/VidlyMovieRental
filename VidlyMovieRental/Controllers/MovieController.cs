@@ -66,9 +66,24 @@ namespace VidlyMovieRental.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
-            if (movie.Id == 0)
+
+            if (!ModelState.IsValid)
+            {
+
+                var viewModel = new MovieFormViewModel
+                {
+                    Movie = movie,
+                    Genres = _context.Genres.ToList()
+                };
+
+                return View("MovieForm", viewModel);
+            }
+
+
+                if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
             }

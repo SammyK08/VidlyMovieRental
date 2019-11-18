@@ -38,6 +38,7 @@ namespace VidlyMovieRental.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
@@ -50,7 +51,7 @@ namespace VidlyMovieRental.Controllers
                  };
 
             return View("CustomerForm", viewModel);
-        }
+            }
 
             if (customer.Id == 0)
             {
