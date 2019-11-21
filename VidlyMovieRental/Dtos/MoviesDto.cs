@@ -20,6 +20,9 @@ namespace VidlyMovieRental.Dtos
         [Required]
         public DateTime DateAdded { get; set; }
 
+        public GenreDto Genre { get; set; }
+
+
         [Required]
        [Range(1, 20)]
         public int NumberInStock { get; set; }

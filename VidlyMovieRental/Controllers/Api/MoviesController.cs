@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Data.Entity;
 using System.Net.Http;
 using System.Web.Http;
 using VidlyMovieRental.Dtos;
@@ -21,7 +22,8 @@ namespace VidlyMovieRental.Controllers.Api
 
         public IEnumerable<MoviesDto> GetMovies()
         {
-            return _context.Movies.ToList()
+            return _context.Movies.Include(m=>m.Genre)
+                                    .ToList()
                                    .Select(Mapper.Map<Movie, MoviesDto>);
         }
 
