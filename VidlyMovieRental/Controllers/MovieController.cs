@@ -20,7 +20,7 @@ namespace VidlyMovieRental.Controllers
         }
         // GET: Movie
 
-        [Authorize(Roles =RoleName.CanManageMovie)]
+        [Authorize(Roles ="CanManageMovie")]
         public ActionResult New()
         {
             var genre = _context.Genres.ToList();
