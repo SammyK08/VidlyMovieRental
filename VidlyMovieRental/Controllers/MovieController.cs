@@ -30,6 +30,8 @@ namespace VidlyMovieRental.Controllers
 
             };
             return View("MovieForm",viewModel);
+
+          
         }
 
         public ActionResult Index()
