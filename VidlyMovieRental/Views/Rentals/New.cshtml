@@ -17,6 +17,13 @@
         <input id="movie" type="text" value="" class="form-control" />
     </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <ul id="movies" class="list-group"></ul>
+        </div>
+    </div>
+    
+
     <button class="btn btn-primary">SUBMIT</button>
 </form>
 
@@ -25,6 +32,7 @@
     <script>
 
         $(document).ready(function () {
+
 
             var vm = {};
 
@@ -40,16 +48,18 @@
 
             $('#customer').typeahead({
                 minLength: 3,
-                highlight: true
+                highligth: true
             }, {
                     name: 'customers',
                     display: 'name',
                     source: customers
                 }).on("typeahead:select", function (e, customer) {
+
                     vm.customerId = customer.id;
                 });
-
         });
+
+
 
     </script>
 
@@ -57,9 +67,12 @@
 
         $(document).ready(function () {
 
-            var vm = {};
 
-            var customers = new Bloodhound({
+            var vm = {
+                moviesIds: []
+            };
+
+            var movies = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
 
@@ -71,17 +84,24 @@
 
             $('#movie').typeahead({
                 minLength: 3,
-                highlight: true
+                highligth: true
             }, {
-                    name: 'movie',
+                    name: 'movies',
                     display: 'name',
-                    source: customers
+                    source: movies
                 }).on("typeahead:select", function (e, movie) {
-                    vm.movieId = movie.id;
-                });
+                    $("#movies").append("<li class='list-group-item'>" + movie.name + "</li>");
 
+                    $("#movie").typeahead("val", "");
+
+                    vm.moviesIds.push(movie.id);
+
+                });
         });
 
+
+
     </script>
+
 
 }
