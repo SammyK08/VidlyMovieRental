@@ -20,11 +20,17 @@ namespace VidlyMovieRental.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IEnumerable<MoviesDto> GetMovies()
+        public IEnumerable<MoviesDto> GetMovies(string query=null)
         {
-            return _context.Movies.Include(m=>m.Genre)
-                                    .ToList()
-                                   .Select(Mapper.Map<Movie, MoviesDto>);
+            var moviesQuery = _context.Movies.Include(m => m.Genre)
+                                    .Where(m => m.NumberInStock > 0);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+                     return moviesQuery 
+                                 .ToList()
+                                  .Select(Mapper.Map<Movie, MoviesDto>);
         }
 
         public IHttpActionResult GetMovie(int id)

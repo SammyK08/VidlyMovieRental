@@ -20,15 +20,20 @@ namespace VidlyMovieRental.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query=null)
         {
 
-            var customerDto= _context.Customers
-                                .Include(c=>c.MembershipType)
-                                .ToList()
+            var customersQuery = _context.Customers
+                                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                      customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+             var customerDtos= customersQuery
+                                   .ToList()
                                 .Select(Mapper.Map<Customer, CustomerDto>);
 
-            return Ok(customerDto);
+            return Ok(customerDtos);
         }
 
         public IHttpActionResult GetCustomer(int id)

@@ -9,11 +9,11 @@ using VidlyMovieRental.Models;
 
 namespace VidlyMovieRental.Controllers.Api
 {
-    public class NewRetalController : ApiController
+    public class NewRentalController : ApiController
     {
         private ApplicationDbContext _context;
 
-        public NewRetalController()
+        public NewRentalController()
         {
             _context = new ApplicationDbContext();
         }
