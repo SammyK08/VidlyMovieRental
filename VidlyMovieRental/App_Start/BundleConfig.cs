@@ -13,7 +13,8 @@ namespace VidlyMovieRental
                         "~/Scripts/bootbox.js",
                        "~/Scripts/bootstrap.js",
                        "~/Scripts/datatables/jquery.datatables.js",
-                       "~/Scripts/datatables/datatables.bootstrap.js"
+                       "~/Scripts/datatables/datatables.bootstrap.js",
+                       "~/Scripts/typeahead.bundle.js"
                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -28,7 +29,8 @@ namespace VidlyMovieRental
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/datatables/css/datables.bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/typeahead.css"));
         }
     }
 }

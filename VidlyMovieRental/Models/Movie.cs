@@ -24,6 +24,10 @@ namespace VidlyMovieRental.Models
         [Range(1,20)]
         public int NumberInStock { get; set; }
 
+
+        public int Avilability { get; set; }
+
+
         public Genre Genre { get; set; }
 
         [Display(Name ="Genre")]
