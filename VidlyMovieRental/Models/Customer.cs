@@ -8,6 +8,8 @@ namespace VidlyMovieRental.Models
 {
     public class Customer
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required(ErrorMessage ="pleasae enter customer name")]

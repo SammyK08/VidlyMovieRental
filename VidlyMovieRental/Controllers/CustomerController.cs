@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,6 +10,7 @@ using VidlyMovieRental.ViewModel;
 
 namespace VidlyMovieRental.Controllers
 {
+    [Authorize(Roles =MovieRoleName.RoleName)]
     public class CustomerController : Controller
     {
 
@@ -27,6 +29,10 @@ namespace VidlyMovieRental.Controllers
 
         public ActionResult New()
         {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.Users.SingleOrDefault(u => u.Id == userId);
+
+
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {

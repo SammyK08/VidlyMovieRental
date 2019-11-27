@@ -13,5 +13,10 @@ namespace VidlyMovieRental.Controllers
         {
             return View();
         }
+
+        public ActionResult Reserve()
+        {
+            return View();
+        }
     }
 }

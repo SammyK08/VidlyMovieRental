@@ -12,6 +12,7 @@ namespace VidlyMovieRental
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootbox.js",
                        "~/Scripts/bootstrap.js",
+                       "~/Scripts/toastr.js",
                        "~/Scripts/datatables/jquery.datatables.js",
                        "~/Scripts/datatables/datatables.bootstrap.js",
                        "~/Scripts/typeahead.bundle.js"
@@ -30,6 +31,7 @@ namespace VidlyMovieRental
                       "~/Content/bootstrap.css",
                       "~/Content/datatables/css/datables.bootstrap.css",
                       "~/Content/site.css",
+                      "~/Content/toastr.css",
                       "~/Content/typeahead.css"));
         }
     }

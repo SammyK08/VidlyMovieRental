@@ -15,9 +15,11 @@ namespace VidlyMovieRental.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly ApplicationDbContext _context;
 
         public ManageController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -50,6 +52,7 @@ namespace VidlyMovieRental.Controllers
             }
         }
 
+      
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -64,10 +67,12 @@ namespace VidlyMovieRental.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var userProfile = _context.Users.Single(c => c.Id == userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                DrivingLicense= userProfile.DrivingLicense,
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)

@@ -1,0 +1,43 @@
+﻿
+@model VidlyMovieRental.Models.IndexViewModel
+@{
+    /**/
+
+    ViewBag.Title = "New";
+}
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Register", "Manage"))
+{
+    @*@Html.ValidationSummary(true, "please fix the followig errors.")*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.DrivingLicense)
+        @Html.TextBoxFor(m => m.DrivingLicense, new { @class = "form-control" })
+      
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+       
+    </div>
+
+
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
