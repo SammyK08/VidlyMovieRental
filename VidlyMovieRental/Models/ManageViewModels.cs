@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -13,6 +14,7 @@ namespace VidlyMovieRental.Models
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
         public string DrivingLicense { get; set; }
+        public DateTime DateOfBirth { get; set; }
     }
 
     public class ManageLoginsViewModel

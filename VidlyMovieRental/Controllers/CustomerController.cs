@@ -10,7 +10,7 @@ using VidlyMovieRental.ViewModel;
 
 namespace VidlyMovieRental.Controllers
 {
-    [Authorize(Roles =MovieRoleName.RoleName)]
+   
     public class CustomerController : Controller
     {
 
@@ -27,10 +27,11 @@ namespace VidlyMovieRental.Controllers
             _context.Dispose();
         }
 
+       
         public ActionResult New()
         {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.Users.SingleOrDefault(u => u.Id == userId);
+            //var userId = User.Identity.GetUserId();
+            //var userProfile = _context.Users.SingleOrDefault(u => u.Id == userId);
 
 
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -48,9 +49,10 @@ namespace VidlyMovieRental.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+
             if (!ModelState.IsValid)
             {
-
+               
                 var viewModel = new CustomerFormViewModel
                 {
                     Customer = customer,
@@ -59,6 +61,8 @@ namespace VidlyMovieRental.Controllers
 
             return View("CustomerForm", viewModel);
             }
+
+            customer.ApplicationUserId = User.Identity.GetUserId();
 
             if (customer.Id == 0)
             {
@@ -78,9 +82,10 @@ namespace VidlyMovieRental.Controllers
 
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Customer");
+            return RedirectToAction("Index", "UserProfile", new { id = customer.Id });
         }
 
+        [Authorize(Roles = MovieRoleName.RoleName)]
         // GET: Customer
         public ActionResult Index()
         {
@@ -112,7 +117,7 @@ namespace VidlyMovieRental.Controllers
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
 
-            return View("CustomerForm", viewModel);
+            return View("CustomerForm",viewModel);
         }
                            
     }

@@ -1,8 +1,7 @@
-﻿@model VidlyMovieRental.Models.ApplicationUser
+﻿@model VidlyMovieRental.Models.Customer
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>UserName: @Model.UserName</h2><br />
-<label>Phone Number: @Model.PhoneNumber</label><br />
-<label>Driving Licens: @Model.DrivingLicense</label><br />
+<h1>Email: @Model.ApplicationUser.Email</h1>
+<h1>@Model.BirthDate</h1>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,12 +22,12 @@ namespace VidlyMovieRental.Controllers
 
 
         // GET: UserProfile
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.Users.SingleOrDefault(u => u.Id == userId);
+            var customer = _context.Customers.Include(u => u.ApplicationUser).SingleOrDefault(c => c.Id == id);
 
-            return View(userProfile);
+
+            return View(customer);
         }
 
         public ActionResult Edit()

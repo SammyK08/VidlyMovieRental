@@ -289,8 +289,57 @@
     <Compile Include="Migrations\201911270206578_addReservedDomain.designer.cs">
       <DependentUpon>201911270206578_addReservedDomain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911271229081_changeinCustomerDomain.cs" />
+    <Compile Include="Migrations\201911271229081_changeinCustomerDomain.designer.cs">
+      <DependentUpon>201911271229081_changeinCustomerDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271236576_changeinCustomerDomainSecond.cs" />
+    <Compile Include="Migrations\201911271236576_changeinCustomerDomainSecond.designer.cs">
+      <DependentUpon>201911271236576_changeinCustomerDomainSecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271238591_changeinCustomerDomain1.cs" />
+    <Compile Include="Migrations\201911271238591_changeinCustomerDomain1.designer.cs">
+      <DependentUpon>201911271238591_changeinCustomerDomain1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271240352_changeinCustomerDomainSecond1.cs" />
+    <Compile Include="Migrations\201911271240352_changeinCustomerDomainSecond1.designer.cs">
+      <DependentUpon>201911271240352_changeinCustomerDomainSecond1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271250239_addBookDomain.cs" />
+    <Compile Include="Migrations\201911271250239_addBookDomain.designer.cs">
+      <DependentUpon>201911271250239_addBookDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271257062_reAddingCustomerTable.cs" />
+    <Compile Include="Migrations\201911271257062_reAddingCustomerTable.designer.cs">
+      <DependentUpon>201911271257062_reAddingCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271258294_reAddingCustomerTable1.cs" />
+    <Compile Include="Migrations\201911271258294_reAddingCustomerTable1.designer.cs">
+      <DependentUpon>201911271258294_reAddingCustomerTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271305179_addingAppuser.cs" />
+    <Compile Include="Migrations\201911271305179_addingAppuser.designer.cs">
+      <DependentUpon>201911271305179_addingAppuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271316245_addingAppuser1.cs" />
+    <Compile Include="Migrations\201911271316245_addingAppuser1.designer.cs">
+      <DependentUpon>201911271316245_addingAppuser1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271318383_addingAppuser2.cs" />
+    <Compile Include="Migrations\201911271318383_addingAppuser2.designer.cs">
+      <DependentUpon>201911271318383_addingAppuser2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271330422_addingAppuser3.cs" />
+    <Compile Include="Migrations\201911271330422_addingAppuser3.designer.cs">
+      <DependentUpon>201911271330422_addingAppuser3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271333364_addingAppuser4.cs" />
+    <Compile Include="Migrations\201911271333364_addingAppuser4.designer.cs">
+      <DependentUpon>201911271333364_addingAppuser4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -634,6 +683,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911270206578_addReservedDomain.resx">
       <DependentUpon>201911270206578_addReservedDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271229081_changeinCustomerDomain.resx">
+      <DependentUpon>201911271229081_changeinCustomerDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271236576_changeinCustomerDomainSecond.resx">
+      <DependentUpon>201911271236576_changeinCustomerDomainSecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271238591_changeinCustomerDomain1.resx">
+      <DependentUpon>201911271238591_changeinCustomerDomain1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271240352_changeinCustomerDomainSecond1.resx">
+      <DependentUpon>201911271240352_changeinCustomerDomainSecond1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271250239_addBookDomain.resx">
+      <DependentUpon>201911271250239_addBookDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271257062_reAddingCustomerTable.resx">
+      <DependentUpon>201911271257062_reAddingCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271258294_reAddingCustomerTable1.resx">
+      <DependentUpon>201911271258294_reAddingCustomerTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271305179_addingAppuser.resx">
+      <DependentUpon>201911271305179_addingAppuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271316245_addingAppuser1.resx">
+      <DependentUpon>201911271316245_addingAppuser1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271318383_addingAppuser2.resx">
+      <DependentUpon>201911271318383_addingAppuser2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271330422_addingAppuser3.resx">
+      <DependentUpon>201911271330422_addingAppuser3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271333364_addingAppuser4.resx">
+      <DependentUpon>201911271333364_addingAppuser4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

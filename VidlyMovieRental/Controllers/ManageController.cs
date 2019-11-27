@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -67,12 +68,15 @@ namespace VidlyMovieRental.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-            var userProfile = _context.Users.Single(c => c.Id == userId);
+           // var userProfile = _context.Users.Single(c => c.Id == userId);
+            var customer = _context.Customers.Include(u => u.ApplicationUser).SingleOrDefault(c => c.ApplicationUserId == userId);
+            
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                DrivingLicense= userProfile.DrivingLicense,
+               DrivingLicense= customer.ApplicationUser.DrivingLicense,
+               DateOfBirth=(DateTime)customer.BirthDate,
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
